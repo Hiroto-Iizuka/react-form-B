@@ -13,7 +13,7 @@ export const Basic = () => {
       <BirthDate />
       <br />
       <div>
-        <button><Link to="/">次へ進む</Link></button>
+        <button><Link to="/enquete">次へ進む</Link></button>
       </div>
     </>
     

@@ -59,7 +59,7 @@ export const Enquete = () => {
       <br />
       <div>
         <button><Link to="/">前へ戻る</Link></button>
-        <button><Link to="/">次へ進む</Link></button>
+        <button><Link to="/counselingdetail">次へ進む</Link></button>
       </div>
     </>
   )
