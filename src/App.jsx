@@ -1,12 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Basic } from "./Basic";
+import { Enquete } from './Enquete';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>ホームページ</h1> 
         <Basic />
+        <Enquete />
       </div>
     </BrowserRouter>
   );

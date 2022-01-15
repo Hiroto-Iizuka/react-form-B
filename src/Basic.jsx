@@ -11,7 +11,7 @@ export const Basic = () => {
 
       <Gender />
       <BirthDate />
-
+      <br />
       <div>
         <button><Link to="/">次へ進む</Link></button>
       </div>
