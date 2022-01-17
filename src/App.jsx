@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Basic } from "./Basic";
-import { Enquete } from './Enquete';
+import { Question } from './Question';
 import { CounselingDetail } from './CounselingDetail';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Basic />} />
-        <Route path="/enquete" element={<Enquete />} />
+        <Route path="/question" element={<Question />} />
         <Route path="/counselingdetail" element={<CounselingDetail />} />
       </Routes>
     </BrowserRouter>

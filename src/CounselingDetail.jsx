@@ -14,8 +14,8 @@ export const CounselingDetail = () => {
       </div>
       <br />
       <div>
-        <button><Link to="/enquete">前へ戻る</Link></button>
-        <button><Link to="/">次へ進む</Link></button>
+        <button><Link to="/question">前へ戻る</Link></button>
+        <button><Link to="">次へ進む</Link></button>
       </div>
     </>
   )
