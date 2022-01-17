@@ -12,8 +12,10 @@ export const BirthDate = () => {
   const setYear = () => {
     for (let i = 1920; i <= new Date().getFullYear(); i++) {
       const option = document.createElement('option');
-      option.value = i;
-      option.text = i;
+      const date = new Date(Date.UTC(i));
+      const jc = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', {year: 'numeric'}).format(date);
+      option.value = `${i}（${jc}）`;
+      option.text = `${i}（${jc}）`;
       if (birthYearRef.current) birthYearRef.current.appendChild(option);
     }
     birthYearRef.current.value = birthYear;

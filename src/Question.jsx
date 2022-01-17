@@ -13,7 +13,9 @@ export const Question = () => {
     "過去5年以内に、病気や怪我で、手術を受けたことまたは継続して7日以上の入院をしたことがありますか？"
   ]
 
-  // const [question, setQuestion] = useState();
+  const [question, setQuestion] = useState([
+    
+  ]);
 
   const displayQuestion1 = () => {
     const fragment = document.createDocumentFragment();
