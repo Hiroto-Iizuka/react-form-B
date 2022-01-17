@@ -12,9 +12,9 @@ export const Basic = () => {
       <Gender />
       <BirthDate />
       <br />
-      <div>
+      {/* <div>
         <button><Link to="/question">次へ進む</Link></button>
-      </div>
+      </div> */}
     </>
     
   )

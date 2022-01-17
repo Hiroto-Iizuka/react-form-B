@@ -54,7 +54,7 @@ export const BirthDate = () => {
     setYear();
     setMonth();
     setDay();
-  });
+  }, []);
 
   useEffect(() => {
   }, [birthYear, birthMonth]);
