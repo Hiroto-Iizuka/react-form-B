@@ -18,7 +18,6 @@ export const BirthDate = () => {
       option.text = `${i}（${jc}）`;
       if (birthYearRef.current) birthYearRef.current.appendChild(option);
     }
-    birthYearRef.current.value = birthYear;
   }
 
   const setMonth = () => {
@@ -28,7 +27,6 @@ export const BirthDate = () => {
       option.text = i;
       if (birthMonthRef.current) birthMonthRef.current.appendChild(option);
     }
-    if (birthMonthRef.current) birthMonthRef.current.value = birthMonth;
   }
 
   const setDay = () => {
@@ -38,7 +36,6 @@ export const BirthDate = () => {
       option.text = i;
       if (birthDayRef.current) birthDayRef.current.appendChild(option);
     }
-    if (birthDayRef.current) birthDayRef.current.value = birthDay;
   }
 
   const selectBirthYear = (e) => {
