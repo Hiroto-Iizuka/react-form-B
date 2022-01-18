@@ -56,10 +56,6 @@ export const BirthDate = () => {
     setDay();
   }, []);
 
-  useEffect(() => {
-  }, [birthYear, birthMonth]);
-
-
   return (
     <div>
       <p>-生年月日-</p>
