@@ -1,53 +1,12 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect, createElement } from "react";
+import { useState } from "react";
+import { Question1 } from "./components/Question1";
+import { Question2 } from "./components/Question2";
+import { Question3 } from "./components/Question3";
 
 export const Question = () => {
-  const [question1Answer, setQuestion1Answer] = useState();
-  const [question2Answer, setQuestion2Answer] = useState();
-  const [question3Answer, setQuestion3Answer] = useState();
-
-  // アンケートデータ
-  const questions = [
-    "現在、生命保険に加入されていますか？",
-    "現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？",
-    "過去5年以内に、病気や怪我で、手術を受けたことまたは継続して7日以上の入院をしたことがありますか？"
-  ]
-
-  const [question, setQuestion] = useState([
-    
-  ]);
-
-  const displayQuestion1 = () => {
-    const fragment = document.createDocumentFragment();
-    const p = document.createElement('p');
-    const label = document.createElement('label');
-    const inputYes = document.createElement('input');
-    const inputNo = document.createElement('input');
-    inputYes.setAttribute('onClick', 'displayQuestion2');
-    inputNo.setAttribute('onClick', 'displayQuestion2');
-    fragment.append(p);
-    p.append(questions[0]);
-    label.append(inputYes);
-    inputYes.append('はい');
-    label.append(inputNo);
-    inputNo.append('いいえ');
-  }
-
-  const answerQuestion1 = (e) => {
-    setQuestion1Answer(e.target.value);
-  }
-
-  const answerQuestion2 = (e) => {
-    setQuestion2Answer(e.target.value);
-  }
-
-  const answerQuestion3 = (e) => {
-    setQuestion3Answer(e.target.value);
-  }
-
-  useEffect(() => {
-    displayQuestion1();
-  })
+  const [displayQuestion2, setDisplayQuestion2] = useState(false);
+  const [displayQuestion3, setDisplayQuestion3] = useState(false);
 
   return (
     <>
@@ -56,34 +15,9 @@ export const Question = () => {
         <p>以下にお答えください</p>
       </div>
       <div>
-        <label>
-          <input type="radio" value="yes" onChange={answerQuestion1} onClick={displayQuestion1} checked={question1Answer === "yes"} />
-          はい
-        </label>
-        <label>
-          <input type="radio" value="no" onChange={answerQuestion1} onClick={displayQuestion1} checked={question1Answer === "no"} />
-          いいえ
-        </label>
-
-        <p>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
-        <label>
-          <input type="radio" value="yes" onChange={answerQuestion2} checked={question2Answer === "yes"} />
-          はい
-        </label>
-        <label>
-          <input type="radio" value="no" onChange={answerQuestion2} checked={question2Answer === "no"} />
-          いいえ
-        </label>
-
-        <p>過去5年以内に、病気や怪我で、手術を受けたことまたは継続して7日以上の入院をしたことがありますか？</p>
-        <label>
-          <input type="radio" value="yes" onChange={answerQuestion3} checked={question3Answer === "yes"} />
-          はい
-        </label>
-        <label>
-          <input type="radio" value="no" onChange={answerQuestion3} checked={question3Answer === "no"} />
-          いいえ
-        </label>
+        <Question1 setDisplayQuestion2={setDisplayQuestion2} />
+        { displayQuestion2 && <Question2 setDisplayQuestion3={setDisplayQuestion3} /> }
+        { displayQuestion3 && <Question3 /> }
       </div>
       <br />
       <div>
