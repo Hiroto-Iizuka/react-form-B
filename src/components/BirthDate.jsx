@@ -1,6 +1,7 @@
-import React, { useRef, useState, useEffect } from "react"; 
+import React, { useRef, useState, useEffect } from "react";
+import {setYear, setMonth, setDay} from "./definition";
 
-export const BirthDate = () => {
+export const BirthDate = ({ dataYears }) => {
   const birthYearRef = useRef(null);
   const birthMonthRef = useRef(null);
   const birthDayRef = useRef(null);
@@ -8,35 +9,6 @@ export const BirthDate = () => {
   const [birthYear, setBirthYear] = useState();
   const [birthMonth, setBirthMonth] = useState();
   const [birthDay, setBirthDay] = useState();
-
-  const setYear = () => {
-    for (let i = 1920; i <= new Date().getFullYear(); i++) {
-      const option = document.createElement('option');
-      const date = new Date(Date.UTC(i));
-      const jc = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', {year: 'numeric'}).format(date);
-      option.value = `${i}（${jc}）`;
-      option.text = `${i}（${jc}）`;
-      birthYearRef.current.appendChild(option);
-    }
-  }
-
-  const setMonth = () => {
-    for (let i = 1; i <= 12; i++) {
-      const option = document.createElement('option');
-      option.value = i;
-      option.text = i;
-      birthMonthRef.current.appendChild(option);
-    }
-  }
-
-  const setDay = () => {
-    for (let i = 1; i <= 31; i++) {
-      const option = document.createElement('option');
-      option.value = i;
-      option.text = i;
-      birthDayRef.current.appendChild(option);
-    }
-  }
 
   const selectBirthYear = (e) => {
     setBirthYear(e.target.value);
@@ -60,7 +32,13 @@ export const BirthDate = () => {
     <div>
       <p>-生年月日-</p>
       <label>
-        <select ref={birthYearRef} value={birthYear} onChange={selectBirthYear}></select>年
+        <select ref={birthYearRef} value={birthYear} onChange={selectBirthYear}>
+          { 
+          dataYears.map((option, key) => (
+            <option value={`${option.year}` `${option.japaneseCalendar}`} key={key}>{`${option.year}` `${option.japaneseCalendar}`}</option>
+          ))
+          }
+        </select>年
       </label>
       <label>
         <select ref={birthMonthRef} value={birthMonth} onChange={selectBirthMonth}></select>月
