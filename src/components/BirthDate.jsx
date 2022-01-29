@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import {setYear, setMonth, setDay} from "./definition";
+// import {dataYears} from "./definition";
+import {years} from "./definition";
+// import {setYears, setMonths, setDays} from "./definition";
 
-export const BirthDate = ({ dataYears }) => {
+export const BirthDate = () => {
   const birthYearRef = useRef(null);
   const birthMonthRef = useRef(null);
   const birthDayRef = useRef(null);
@@ -22,22 +24,22 @@ export const BirthDate = ({ dataYears }) => {
     setBirthDay(e.target.value);
   }
 
-  useEffect(() => {
-    setYear();
-    setMonth();
-    setDay();
-  }, []);
+
+  // useEffect(() => {
+  //   setYears();
+  //   setMonths();
+  //   setDays();
+  // }, []);
 
   return (
     <div>
       <p>-生年月日-</p>
       <label>
         <select ref={birthYearRef} value={birthYear} onChange={selectBirthYear}>
-          { 
-          dataYears.map((option, key) => (
-            <option value={`${option.year}` `${option.japaneseCalendar}`} key={key}>{`${option.year}` `${option.japaneseCalendar}`}</option>
-          ))
-          }
+          {  
+            years.map((val) => 
+            <option value={`${val["year"]}` `${val["japaneseCalender"]}`}>{`${val["year"]}` `${val["japaneseCalender"]}`}</option>
+          )}          
         </select>年
       </label>
       <label>
