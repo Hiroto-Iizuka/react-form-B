@@ -1,4 +1,4 @@
-export const setYears = () => {
+const setYears = () => {
   const dataYears = [];
   
   for (let i = 1920; i <= new Date().getFullYear(); i++) {
@@ -11,16 +11,22 @@ export const setYears = () => {
 
 export const years = setYears();
 
-export const setMonths = () => {
+const setMonths = () => {
+  const dataMonths = [];
   for (let i = 1; i <= 12; i++) {
-    const dataMonths = [];
     dataMonths.push(i);
   }
+  return dataMonths;
 }
 
-export const setDays = () => {
+export const months = setMonths();
+
+const setDays = () => {
+  const dataDays = [];
   for (let i = 1; i <= 31; i++) {
-    const dataDays = [];
     dataDays.push(i);
   }
+  return dataDays;
 }
+
+export const days = setDays();
