@@ -15,7 +15,7 @@ export const CounselingDetail = () => {
       <br />
       <div>
         <button><Link to="/question">前へ戻る</Link></button>
-        <button><Link to="">次へ進む</Link></button>
+        <button><Link to="/confirmation">次へ進む</Link></button>
       </div>
     </>
   )
