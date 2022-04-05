@@ -4,10 +4,7 @@ import { Question } from './Question';
 import { CounselingDetail } from './CounselingDetail';
 import { Confirmation } from './Confirmation';
 import { Provider } from 'react-redux';
-import createStore from './createStore';
-
-export const store = createStore();
-
+import store from "./store/index";
 
 function App() {
   return (
