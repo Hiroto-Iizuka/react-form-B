@@ -1,6 +1,8 @@
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Gender } from "./components/Gender";
 import { BirthDate } from "./components/BirthDate";
+import { Confirmation } from "./Confirmation";
 
 export const Basic = () => {
 
@@ -19,3 +21,5 @@ export const Basic = () => {
     
   )
 }
+
+export default Confirmation
