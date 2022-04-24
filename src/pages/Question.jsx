@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Question1 } from "./components/Question1";
-import { Question2 } from "./components/Question2";
-import { Question3 } from "./components/Question3";
+import { Question1 } from "../components/Question1";
+import { Question2 } from "../components/Question2";
+import { Question3 } from "../components/Question3";
 
 export const Question = () => {
   const [displayQuestion2, setDisplayQuestion2] = useState(false);

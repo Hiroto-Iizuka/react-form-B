@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Gender } from "./components/Gender";
-import { BirthDate } from "./components/BirthDate";
+import { Gender } from "../components/Gender";
+import { BirthDate } from "../components/BirthDate";
 
 export const Basic = () => {
 
