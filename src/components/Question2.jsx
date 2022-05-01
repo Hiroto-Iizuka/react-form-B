@@ -1,26 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const Question2 = (props) => {
-  const [questionAnswer, setQuestionAnswer] = useState();
-
-
+export const Question2 = ({ questionAnswer2, setQuestionAnswer2, setDisplayQuestion3 }) => {
+  
   const answerQuestion = (e) => {
-    setQuestionAnswer(e.target.value);
+    setQuestionAnswer2(e.target.value);
   }
 
   const displayNextQuestion = () => {
-    props.setDisplayQuestion3(true);
-  } 
+    setDisplayQuestion3(true);
+  }
 
   return (
     <>
       <p>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
       <label>
-        <input type="radio" value="yes" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "yes"} />
+        <input type="radio" value="はい" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer2 === "はい"} />
         はい
       </label>
       <label>
-        <input type="radio" value="no" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "no"} />
+        <input type="radio" value="いいえ" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer2 === "いいえ"} />
         いいえ
       </label>
     </>

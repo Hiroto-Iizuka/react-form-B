@@ -1,14 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { years, months, days } from "./definition";
 
-export const BirthDate = () => {
+export const BirthDate = ({ birthYear, birthMonth, birthDay, setBirthYear, setBirthMonth, setBirthDay }) => {
   const birthYearRef = useRef(null);
   const birthMonthRef = useRef(null);
   const birthDayRef = useRef(null);
-
-  const [birthYear, setBirthYear] = useState();
-  const [birthMonth, setBirthMonth] = useState();
-  const [birthDay, setBirthDay] = useState();
 
   const selectBirthYear = (e) => {
     setBirthYear(e.target.value);
@@ -27,22 +23,22 @@ export const BirthDate = () => {
       <p>-生年月日-</p>
       <label>
         <select ref={birthYearRef} value={birthYear} onChange={selectBirthYear}>
-          {years.map((year) =>
-            (<option value={year.year}>{year.year}（{year.japaneseCalender}）</option>)
+          {years.map((year, index) =>
+            (<option key={index} value={year.year}>{year.year}（{year.japaneseCalender}）</option>)
           )}
         </select>年
       </label>
       <label>
         <select ref={birthMonthRef} value={birthMonth} onChange={selectBirthMonth}>
-          {months.map((month) =>
-            (<option value={month}>{month}</option>)
+          {months.map((month, index) =>
+            (<option key={index} value={month}>{month}</option>)
           )}
         </select>月
       </label>
       <label>
         <select ref={birthDayRef} value={birthDay} onChange={selectBirthDay}>
-          {days.map((day) =>
-            (<option value={day}>{day}</option>)
+          {days.map((day, index) =>
+            (<option key={index} value={day}>{day}</option>)
           )}
         </select>日
       </label>

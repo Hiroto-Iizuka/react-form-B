@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const Gender = () => {
-  const [gender, setGender] = useState("男性");
+export const Gender = ({ gender, setGender }) => {
 
   const handleChange = (e) => {
     setGender(e.target.value);

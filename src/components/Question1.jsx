@@ -1,26 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const Question1 = (props) => {
-  const [questionAnswer, setQuestionAnswer] = useState();
+export const Question1 = ({ questionAnswer, setQuestionAnswer, setDisplayQuestion2 }) => {
 
   const answerQuestion = (e) => {
     setQuestionAnswer(e.target.value);
   }
 
   const displayNextQuestion = () => {
-    props.setDisplayQuestion2(true);
-  } 
+    setDisplayQuestion2(true);
+  }
 
-  
   return (  
     <>
       <p>現在、生命保険に加入されていますか？</p>
       <label>
-        <input type="radio" value="yes" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "yes"} />
+        <input type="radio" value="はい" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "はい"} />
         はい
       </label>
       <label>
-        <input type="radio" value="no" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "no"} />
+        <input type="radio" value="いいえ" onChange={answerQuestion} onClick={displayNextQuestion} checked={questionAnswer === "いいえ"} />
         いいえ
       </label>
     </> 
