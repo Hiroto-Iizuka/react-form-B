@@ -1,8 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useReducer, useState } from "react";
+// import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import reducer from '../reducers'
 
 export const Confirmation = ({ gender, birthYear, birthMonth, birthDay, question1, question2, question3, counselingDetail }) => {
+  const [state, dispatch] = useReducer(reducer, []);
+
   return (
     <>
       <div>
@@ -11,7 +14,8 @@ export const Confirmation = ({ gender, birthYear, birthMonth, birthDay, question
       </div>
       <div>
         <p>性別</p>
-        <p>{gender}</p>
+        <p>{state.gender}</p>
+        <p>{state}</p>
       </div>
       <div>
         <p>生年月日</p>
@@ -42,17 +46,19 @@ export const Confirmation = ({ gender, birthYear, birthMonth, birthDay, question
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    gender: state.gender,
-    birthYear: state.birthYear,
-    birthMonth: state.birthMonth,
-    birthDay: state.birthDay,
-    question1: state.question1,
-    question2: state.question2,
-    question3: state.question3,
-    counselingDetail: state.counselingDetail,
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     gender: state.gender,
+//     birthYear: state.birthYear,
+//     birthMonth: state.birthMonth,
+//     birthDay: state.birthDay,
+//     question1: state.question1,
+//     question2: state.question2,
+//     question3: state.question3,
+//     counselingDetail: state.counselingDetail,
+//   }
+// }
 
-export default connect(mapStateToProps)(Confirmation);
+// export default connect(mapStateToProps)(Confirmation);
+
+export default Confirmation;
