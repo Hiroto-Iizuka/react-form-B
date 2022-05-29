@@ -5,8 +5,6 @@ import { BirthDate } from "../components/BirthDate";
 
 import reducer from '../reducers'
 
-// import { connect } from "react-redux";
-
 export const Basic = () => {
   const [state, dispatch] = useReducer(reducer, []);
   const [gender, setGender] = useState("男性");
@@ -31,33 +29,23 @@ export const Basic = () => {
     console.log(state)
   }
 
-
   return (
     <>
       <p>STEP1</p>
       <p>お客様の情報を入力してください</p>
+      {state.gender}
+      {`${state.birthYear}年${state.birthMonth}月${state.birthDay}日`}
 
       <Gender gender={gender} setGender={setGender} />
       <BirthDate birthYear={birthYear} setBirthYear={setBirthYear} birthMonth={birthMonth} setBirthMonth={setBirthMonth} birthDay={birthDay} setBirthDay={setBirthDay} />
       <br />
       <button onClick={answerBasic}>更新</button>
       <div>
-        <button><Link to="/question" >次へ進む</Link></button>
+        <button onClick={answerBasic}><Link to={{pathname: "/confirmation", state: { gender: gender, birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay} }} >次へ進む</Link></button>
       </div>
     </>
     
   )
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     gender: state.gender,
-//     birthYear: state.birthYear,
-//     birthMonth: state.birthMonth,
-//     birthDay: state.birthDay,
-//   }
-// }
-
-// export default connect(mapStateToProps)(Basic);
 
 export default Basic;
