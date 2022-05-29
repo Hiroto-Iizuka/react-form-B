@@ -33,19 +33,19 @@ export const Confirmation = () => {
       </div>
       <div>
         <p>現在、生命保険に加入されていますか？</p>
-        {/* <p>{question1}</p> */}
+        <p>{state.question}</p>
       </div>
       <div>
         <p>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
-        {/* <p>{question2}</p> */}
+        <p>{state.question2}</p>
       </div>
       <div>
         <p>過去5年以内に、病気や怪我で、手術を受けたことまたは継続して7日以上の入院をしたことがありますか？</p>
-        {/* <p>{question3}</p> */}
+        <p>{state.question3}</p>
       </div>
       <div>
         <p>ご相談内容</p>
-        {/* <p>{counselingDetail}</p> */}
+        <p>{state.counselingDetail}</p>
       </div>
       <br />
       <div>

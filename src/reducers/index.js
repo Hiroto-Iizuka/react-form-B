@@ -18,6 +18,16 @@ const answers = (state = initialState, action) => {
         birthMonth: action.birthMonth,
         birthDay: action.birthDay
       }
+    case 'QUESTION_ANSWERS':
+      return {
+        question: action.question,
+        question2: action.question2,
+        question3: action.question3,
+      }
+    case 'COUNSELINGDETAIL_ANSWER':
+      return {
+        counselingDetail: action.counselingDetail,
+      }
     case 'ALL_ANSWERS':
       return state;
     default:
