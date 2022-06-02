@@ -11,6 +11,16 @@ const initialState = {
 
 const answers = (state = initialState, action) => {
   switch (action.type) {
+    case 'GENDER_ANSWER':
+      return {
+        gender: action.gender,
+      }
+    case 'BIRTHDATE_ANSWER':
+      return {
+        birthYear: action.birthYear,
+        birthMonth: action.birthMonth,
+        birthDay: action.birthDay,
+      }
     case 'BASIC_ANSWERS':
       return { 
         gender: action.gender,
