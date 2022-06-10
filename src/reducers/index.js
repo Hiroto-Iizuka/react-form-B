@@ -31,21 +31,6 @@ const answers = (state = initialState, action) => {
         ...state,
         birthDay: action.birthDay,
       }      
-    // case 'BASIC_ANSWERS':
-    //   return {
-    //     ...state,
-    //     gender: action.gender,
-    //     birthYear: action.birthYear,
-    //     birthMonth: action.birthMonth,
-    //     birthDay: action.birthDay
-    //   }
-    // case 'QUESTION_ANSWERS':
-    //   return {
-    //     ...state,
-    //     question: action.question,
-    //     question2: action.question2,
-    //     question3: action.question3,
-    //   }
     case 'QUESTION1_ANSWER':
       return {
         ...state,
