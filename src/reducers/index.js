@@ -13,33 +13,59 @@ const answers = (state = initialState, action) => {
   switch (action.type) {
     case 'GENDER_ANSWER':
       return {
+        ...state,
         gender: action.gender,
       }
-    case 'BIRTHDATE_ANSWER':
+    case 'BIRTHYEAR_ANSWER':
       return {
+        ...state,
         birthYear: action.birthYear,
+      }
+    case 'BIRTHMONTH_ANSWER':
+      return {
+        ...state,
         birthMonth: action.birthMonth,
+      }
+    case 'BIRTHDAY_ANSWER':
+      return {
+        ...state,
         birthDay: action.birthDay,
-      }
-    case 'BASIC_ANSWERS':
-      return { 
-        gender: action.gender,
-        birthYear: action.birthYear,
-        birthMonth: action.birthMonth,
-        birthDay: action.birthDay
-      }
-    case 'QUESTION_ANSWERS':
+      }      
+    // case 'BASIC_ANSWERS':
+    //   return {
+    //     ...state,
+    //     gender: action.gender,
+    //     birthYear: action.birthYear,
+    //     birthMonth: action.birthMonth,
+    //     birthDay: action.birthDay
+    //   }
+    // case 'QUESTION_ANSWERS':
+    //   return {
+    //     ...state,
+    //     question: action.question,
+    //     question2: action.question2,
+    //     question3: action.question3,
+    //   }
+    case 'QUESTION1_ANSWER':
       return {
+        ...state,
         question: action.question,
+      }
+    case 'QUESTION2_ANSWER':
+      return {
+        ...state,
         question2: action.question2,
+      }
+    case 'QUESTION3_ANSWER':
+      return {
+        ...state,
         question3: action.question3,
       }
     case 'COUNSELINGDETAIL_ANSWER':
       return {
+        ...state,
         counselingDetail: action.counselingDetail,
       }
-    case 'ALL_ANSWERS':
-      return state;
     default:
       return state;
   }

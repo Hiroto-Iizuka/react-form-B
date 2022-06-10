@@ -1,5 +1,5 @@
-import React, { useReducer, useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useReducer } from "react";
+import { Link } from "react-router-dom";
 import { Gender } from "../components/Gender";
 import { BirthDate } from "../components/BirthDate";
 
@@ -7,29 +7,17 @@ import reducer from '../reducers'
 
 export const Basic = () => {
   const [state, dispatch] = useReducer(reducer, []);
-  const location = useLocation();
-  const basicState = location.state;
-
-  console.log(state)
-
-  useEffect(() => {
-    dispatch({
-      type: 'BASIC_ANSWERS',
-      gender: state.gender,
-    })
-  }, [])
 
   return (
     <>
       <p>STEP1</p>
       <p>お客様の情報を入力してください</p>
-      {basicState.gender}
 
-      <Gender />
-      <BirthDate />
+      <Gender state={state} dispatch={dispatch} />
+      <BirthDate state={state} dispatch={dispatch} />
       <br />
       <div>
-        <button><Link to={{pathname: "/question"}}>次へ進む</Link></button>
+        <button><Link to={{pathname: "/question"}} state={{gender: state.gender, birthYear: state.birthYear, birthMonth: state.birthMonth, birthDay: state.birthDay }}>次へ進む</Link></button>
       </div>
     </>
     

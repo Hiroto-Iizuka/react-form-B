@@ -1,16 +1,13 @@
-import React, { useReducer } from "react";
+import React from "react";
 
-import reducer from '../reducers'
-
-export const Gender = () => {
-  const [state, dispatch] = useReducer(reducer, []);
+export const Gender = ({state, dispatch}) => {
 
   const handleChange = (e) => {
     dispatch({
       type: 'GENDER_ANSWER',
       gender: e.target.value
-    })
-  }
+    });
+  };
 
   return (
     <div>

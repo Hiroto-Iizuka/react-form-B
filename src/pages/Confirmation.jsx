@@ -1,21 +1,9 @@
-import React, { useReducer, useState, useEffect } from "react";
-
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import reducer from '../reducers'
-
-
 
 export const Confirmation = () => {
   const location = useLocation();
   const state = location.state;
-
-  console.log(state);
-
-  // useEffect(() => {
-  //   displayAnswers()
-  // }, [])
-  
-
 
   return (
     <>

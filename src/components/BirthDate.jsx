@@ -1,11 +1,7 @@
-import React, { useRef, useReducer } from "react";
+import React, { useRef } from "react";
 import { years, months, days } from "./definition";
 
-import reducer from '../reducers'
-
-
-export const BirthDate = () => {
-  const [state, dispatch] = useReducer(reducer, [])
+export const BirthDate = ({state, dispatch}) => {
 
   const birthYearRef = useRef(null);
   const birthMonthRef = useRef(null);
@@ -13,24 +9,24 @@ export const BirthDate = () => {
 
   const selectBirthYear = (e) => {
     dispatch({
-      type: 'BIRTHDATE_ANSWER',
-      birthYear: e.target.value  
-    })
-  }
+      type: 'BIRTHYEAR_ANSWER',
+      birthYear: e.target.value
+    });
+  };
 
   const selectBirthMonth = (e) => {
     dispatch({
-      type: 'BIRTHDATE_ANSWER',
+      type: 'BIRTHMONTH_ANSWER',
       birthMonth: e.target.value  
-    })
-  }
+    });
+  };
 
   const selectBirthDay = (e) => {
     dispatch({
-      type: 'BIRTHDATE_ANSWER',
+      type: 'BIRTHDAY_ANSWER',
       birthDay: e.target.value  
-    })
-  }
+    });
+  };
 
   return (
     <div>
